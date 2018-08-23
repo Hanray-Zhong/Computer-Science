@@ -1,0 +1,7 @@
+G:\学习\计算机\C#\第三章\变量\变量\obj\Debug\变量.csprojResolveAssemblyReference.cache
+G:\学习\计算机\C#\第三章\变量\变量\obj\Debug\变量.csproj.CoreCompileInputs.cache
+G:\学习\计算机\C#\第三章\变量\变量\bin\Debug\变量.exe.config
+G:\学习\计算机\C#\第三章\变量\变量\bin\Debug\变量.exe
+G:\学习\计算机\C#\第三章\变量\变量\bin\Debug\变量.pdb
+G:\学习\计算机\C#\第三章\变量\变量\obj\Debug\变量.exe
+G:\学习\计算机\C#\第三章\变量\变量\obj\Debug\变量.pdb

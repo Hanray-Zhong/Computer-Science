@@ -1,0 +1,7 @@
+G:\学习\计算机\C#\第五章\split函数\split函数\bin\Debug\split函数.exe.config
+G:\学习\计算机\C#\第五章\split函数\split函数\bin\Debug\split函数.exe
+G:\学习\计算机\C#\第五章\split函数\split函数\bin\Debug\split函数.pdb
+G:\学习\计算机\C#\第五章\split函数\split函数\obj\Debug\split函数.csprojResolveAssemblyReference.cache
+G:\学习\计算机\C#\第五章\split函数\split函数\obj\Debug\split函数.csproj.CoreCompileInputs.cache
+G:\学习\计算机\C#\第五章\split函数\split函数\obj\Debug\split函数.exe
+G:\学习\计算机\C#\第五章\split函数\split函数\obj\Debug\split函数.pdb

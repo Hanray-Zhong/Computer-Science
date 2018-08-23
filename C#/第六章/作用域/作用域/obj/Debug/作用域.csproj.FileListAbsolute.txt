@@ -1,0 +1,7 @@
+G:\学习\计算机\C#\第六章\作用域\作用域\bin\Debug\作用域.exe.config
+G:\学习\计算机\C#\第六章\作用域\作用域\bin\Debug\作用域.exe
+G:\学习\计算机\C#\第六章\作用域\作用域\bin\Debug\作用域.pdb
+G:\学习\计算机\C#\第六章\作用域\作用域\obj\Debug\作用域.csprojResolveAssemblyReference.cache
+G:\学习\计算机\C#\第六章\作用域\作用域\obj\Debug\作用域.csproj.CoreCompileInputs.cache
+G:\学习\计算机\C#\第六章\作用域\作用域\obj\Debug\作用域.exe
+G:\学习\计算机\C#\第六章\作用域\作用域\obj\Debug\作用域.pdb

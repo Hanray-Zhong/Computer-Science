@@ -1,0 +1,7 @@
+G:\学习\计算机\C#\第五章\foreach循环\foreach循环\bin\Debug\foreach循环.exe.config
+G:\学习\计算机\C#\第五章\foreach循环\foreach循环\bin\Debug\foreach循环.exe
+G:\学习\计算机\C#\第五章\foreach循环\foreach循环\bin\Debug\foreach循环.pdb
+G:\学习\计算机\C#\第五章\foreach循环\foreach循环\obj\Debug\foreach循环.csprojResolveAssemblyReference.cache
+G:\学习\计算机\C#\第五章\foreach循环\foreach循环\obj\Debug\foreach循环.csproj.CoreCompileInputs.cache
+G:\学习\计算机\C#\第五章\foreach循环\foreach循环\obj\Debug\foreach循环.exe
+G:\学习\计算机\C#\第五章\foreach循环\foreach循环\obj\Debug\foreach循环.pdb

@@ -1,0 +1,6 @@
+G:\学习\计算机\C#\第三章\练习（5）\练习（5）\bin\Debug\练习（5）.exe.config
+G:\学习\计算机\C#\第三章\练习（5）\练习（5）\bin\Debug\练习（5）.exe
+G:\学习\计算机\C#\第三章\练习（5）\练习（5）\bin\Debug\练习（5）.pdb
+G:\学习\计算机\C#\第三章\练习（5）\练习（5）\obj\Debug\练习（5）.csproj.CoreCompileInputs.cache
+G:\学习\计算机\C#\第三章\练习（5）\练习（5）\obj\Debug\练习（5）.exe
+G:\学习\计算机\C#\第三章\练习（5）\练习（5）\obj\Debug\练习（5）.pdb

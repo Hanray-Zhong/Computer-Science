@@ -1,0 +1,9 @@
+G:\学习\计算机\C#\第九章\使用类库\使用类库\bin\Debug\使用类库.exe.config
+G:\学习\计算机\C#\第九章\使用类库\使用类库\bin\Debug\使用类库.exe
+G:\学习\计算机\C#\第九章\使用类库\使用类库\bin\Debug\使用类库.pdb
+G:\学习\计算机\C#\第九章\使用类库\使用类库\bin\Debug\ClassLibrary1.dll
+G:\学习\计算机\C#\第九章\使用类库\使用类库\bin\Debug\ClassLibrary1.pdb
+G:\学习\计算机\C#\第九章\使用类库\使用类库\obj\Debug\使用类库.csprojResolveAssemblyReference.cache
+G:\学习\计算机\C#\第九章\使用类库\使用类库\obj\Debug\使用类库.csproj.CoreCompileInputs.cache
+G:\学习\计算机\C#\第九章\使用类库\使用类库\obj\Debug\使用类库.exe
+G:\学习\计算机\C#\第九章\使用类库\使用类库\obj\Debug\使用类库.pdb

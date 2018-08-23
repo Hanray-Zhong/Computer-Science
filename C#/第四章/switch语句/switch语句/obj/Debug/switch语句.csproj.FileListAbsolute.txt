@@ -1,0 +1,7 @@
+G:\学习\计算机\C#\第四章\switch语句\switch语句\obj\Debug\switch语句.csprojResolveAssemblyReference.cache
+G:\学习\计算机\C#\第四章\switch语句\switch语句\obj\Debug\switch语句.csproj.CoreCompileInputs.cache
+G:\学习\计算机\C#\第四章\switch语句\switch语句\bin\Debug\switch语句.exe.config
+G:\学习\计算机\C#\第四章\switch语句\switch语句\bin\Debug\switch语句.exe
+G:\学习\计算机\C#\第四章\switch语句\switch语句\bin\Debug\switch语句.pdb
+G:\学习\计算机\C#\第四章\switch语句\switch语句\obj\Debug\switch语句.exe
+G:\学习\计算机\C#\第四章\switch语句\switch语句\obj\Debug\switch语句.pdb

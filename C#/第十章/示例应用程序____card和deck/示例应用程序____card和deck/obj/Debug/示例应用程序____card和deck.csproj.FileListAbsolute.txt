@@ -1,0 +1,6 @@
+G:\学习\计算机\C#\第十章\示例应用程序____card和deck\示例应用程序____card和deck\bin\Debug\示例应用程序____card和deck.dll
+G:\学习\计算机\C#\第十章\示例应用程序____card和deck\示例应用程序____card和deck\bin\Debug\示例应用程序____card和deck.pdb
+G:\学习\计算机\C#\第十章\示例应用程序____card和deck\示例应用程序____card和deck\obj\Debug\示例应用程序____card和deck.csprojResolveAssemblyReference.cache
+G:\学习\计算机\C#\第十章\示例应用程序____card和deck\示例应用程序____card和deck\obj\Debug\示例应用程序____card和deck.csproj.CoreCompileInputs.cache
+G:\学习\计算机\C#\第十章\示例应用程序____card和deck\示例应用程序____card和deck\obj\Debug\示例应用程序____card和deck.dll
+G:\学习\计算机\C#\第十章\示例应用程序____card和deck\示例应用程序____card和deck\obj\Debug\示例应用程序____card和deck.pdb

@@ -1,0 +1,7 @@
+G:\学习\计算机\C#\第十章\嵌套类\嵌套类\bin\Debug\嵌套类.exe.config
+G:\学习\计算机\C#\第十章\嵌套类\嵌套类\bin\Debug\嵌套类.exe
+G:\学习\计算机\C#\第十章\嵌套类\嵌套类\bin\Debug\嵌套类.pdb
+G:\学习\计算机\C#\第十章\嵌套类\嵌套类\obj\Debug\嵌套类.csprojResolveAssemblyReference.cache
+G:\学习\计算机\C#\第十章\嵌套类\嵌套类\obj\Debug\嵌套类.csproj.CoreCompileInputs.cache
+G:\学习\计算机\C#\第十章\嵌套类\嵌套类\obj\Debug\嵌套类.exe
+G:\学习\计算机\C#\第十章\嵌套类\嵌套类\obj\Debug\嵌套类.pdb

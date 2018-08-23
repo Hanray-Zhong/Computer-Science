@@ -1,0 +1,6 @@
+G:\学习\计算机\C#\第九章\ClassLibrary1\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+G:\学习\计算机\C#\第九章\ClassLibrary1\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+G:\学习\计算机\C#\第九章\ClassLibrary1\ClassLibrary1\obj\Debug\ClassLibrary1.csprojResolveAssemblyReference.cache
+G:\学习\计算机\C#\第九章\ClassLibrary1\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.CoreCompileInputs.cache
+G:\学习\计算机\C#\第九章\ClassLibrary1\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+G:\学习\计算机\C#\第九章\ClassLibrary1\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

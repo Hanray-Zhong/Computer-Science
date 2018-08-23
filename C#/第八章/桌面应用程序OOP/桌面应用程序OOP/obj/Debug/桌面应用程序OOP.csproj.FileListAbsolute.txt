@@ -1,0 +1,15 @@
+G:\学习\计算机\C#\第八章\桌面应用程序OOP\桌面应用程序OOP\bin\Debug\桌面应用程序OOP.exe.config
+G:\学习\计算机\C#\第八章\桌面应用程序OOP\桌面应用程序OOP\bin\Debug\桌面应用程序OOP.exe
+G:\学习\计算机\C#\第八章\桌面应用程序OOP\桌面应用程序OOP\bin\Debug\桌面应用程序OOP.pdb
+G:\学习\计算机\C#\第八章\桌面应用程序OOP\桌面应用程序OOP\obj\Debug\桌面应用程序OOP.csprojResolveAssemblyReference.cache
+G:\学习\计算机\C#\第八章\桌面应用程序OOP\桌面应用程序OOP\obj\Debug\MainWindow.g.cs
+G:\学习\计算机\C#\第八章\桌面应用程序OOP\桌面应用程序OOP\obj\Debug\App.g.cs
+G:\学习\计算机\C#\第八章\桌面应用程序OOP\桌面应用程序OOP\obj\Debug\桌面应用程序OOP_MarkupCompile.cache
+G:\学习\计算机\C#\第八章\桌面应用程序OOP\桌面应用程序OOP\obj\Debug\桌面应用程序OOP_MarkupCompile.lref
+G:\学习\计算机\C#\第八章\桌面应用程序OOP\桌面应用程序OOP\obj\Debug\MainWindow.baml
+G:\学习\计算机\C#\第八章\桌面应用程序OOP\桌面应用程序OOP\obj\Debug\桌面应用程序OOP.g.resources
+G:\学习\计算机\C#\第八章\桌面应用程序OOP\桌面应用程序OOP\obj\Debug\桌面应用程序OOP.Properties.Resources.resources
+G:\学习\计算机\C#\第八章\桌面应用程序OOP\桌面应用程序OOP\obj\Debug\桌面应用程序OOP.csproj.GenerateResource.Cache
+G:\学习\计算机\C#\第八章\桌面应用程序OOP\桌面应用程序OOP\obj\Debug\桌面应用程序OOP.csproj.CoreCompileInputs.cache
+G:\学习\计算机\C#\第八章\桌面应用程序OOP\桌面应用程序OOP\obj\Debug\桌面应用程序OOP.exe
+G:\学习\计算机\C#\第八章\桌面应用程序OOP\桌面应用程序OOP\obj\Debug\桌面应用程序OOP.pdb

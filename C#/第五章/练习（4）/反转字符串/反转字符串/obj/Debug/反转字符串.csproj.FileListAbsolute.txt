@@ -1,0 +1,7 @@
+G:\学习\计算机\C#\第五章\练习（4）\反转字符串\反转字符串\bin\Debug\反转字符串.exe.config
+G:\学习\计算机\C#\第五章\练习（4）\反转字符串\反转字符串\bin\Debug\反转字符串.exe
+G:\学习\计算机\C#\第五章\练习（4）\反转字符串\反转字符串\bin\Debug\反转字符串.pdb
+G:\学习\计算机\C#\第五章\练习（4）\反转字符串\反转字符串\obj\Debug\反转字符串.csprojResolveAssemblyReference.cache
+G:\学习\计算机\C#\第五章\练习（4）\反转字符串\反转字符串\obj\Debug\反转字符串.csproj.CoreCompileInputs.cache
+G:\学习\计算机\C#\第五章\练习（4）\反转字符串\反转字符串\obj\Debug\反转字符串.exe
+G:\学习\计算机\C#\第五章\练习（4）\反转字符串\反转字符串\obj\Debug\反转字符串.pdb

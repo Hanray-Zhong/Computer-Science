@@ -1,0 +1,14 @@
+G:\学习\计算机\C#\桌面应用程序1\桌面应用程序1\bin\Debug\桌面应用程序1.exe.config
+G:\学习\计算机\C#\桌面应用程序1\桌面应用程序1\bin\Debug\桌面应用程序1.exe
+G:\学习\计算机\C#\桌面应用程序1\桌面应用程序1\bin\Debug\桌面应用程序1.pdb
+G:\学习\计算机\C#\桌面应用程序1\桌面应用程序1\obj\Debug\MainWindow.g.cs
+G:\学习\计算机\C#\桌面应用程序1\桌面应用程序1\obj\Debug\App.g.cs
+G:\学习\计算机\C#\桌面应用程序1\桌面应用程序1\obj\Debug\桌面应用程序1_MarkupCompile.cache
+G:\学习\计算机\C#\桌面应用程序1\桌面应用程序1\obj\Debug\桌面应用程序1_MarkupCompile.lref
+G:\学习\计算机\C#\桌面应用程序1\桌面应用程序1\obj\Debug\MainWindow.baml
+G:\学习\计算机\C#\桌面应用程序1\桌面应用程序1\obj\Debug\桌面应用程序1.g.resources
+G:\学习\计算机\C#\桌面应用程序1\桌面应用程序1\obj\Debug\桌面应用程序1.Properties.Resources.resources
+G:\学习\计算机\C#\桌面应用程序1\桌面应用程序1\obj\Debug\桌面应用程序1.csproj.GenerateResource.Cache
+G:\学习\计算机\C#\桌面应用程序1\桌面应用程序1\obj\Debug\桌面应用程序1.csproj.CoreCompileInputs.cache
+G:\学习\计算机\C#\桌面应用程序1\桌面应用程序1\obj\Debug\桌面应用程序1.exe
+G:\学习\计算机\C#\桌面应用程序1\桌面应用程序1\obj\Debug\桌面应用程序1.pdb

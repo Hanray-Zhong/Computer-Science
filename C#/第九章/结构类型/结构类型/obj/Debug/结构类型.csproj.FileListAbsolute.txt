@@ -1,0 +1,7 @@
+G:\学习\计算机\C#\第九章\结构类型\结构类型\bin\Debug\结构类型.exe.config
+G:\学习\计算机\C#\第九章\结构类型\结构类型\bin\Debug\结构类型.exe
+G:\学习\计算机\C#\第九章\结构类型\结构类型\bin\Debug\结构类型.pdb
+G:\学习\计算机\C#\第九章\结构类型\结构类型\obj\Debug\结构类型.csprojResolveAssemblyReference.cache
+G:\学习\计算机\C#\第九章\结构类型\结构类型\obj\Debug\结构类型.csproj.CoreCompileInputs.cache
+G:\学习\计算机\C#\第九章\结构类型\结构类型\obj\Debug\结构类型.exe
+G:\学习\计算机\C#\第九章\结构类型\结构类型\obj\Debug\结构类型.pdb

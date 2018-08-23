@@ -1,0 +1,7 @@
+G:\学习\计算机\C#\第五章\类型转换\类型转换\bin\Debug\类型转换.exe.config
+G:\学习\计算机\C#\第五章\类型转换\类型转换\bin\Debug\类型转换.exe
+G:\学习\计算机\C#\第五章\类型转换\类型转换\bin\Debug\类型转换.pdb
+G:\学习\计算机\C#\第五章\类型转换\类型转换\obj\Debug\类型转换.csprojResolveAssemblyReference.cache
+G:\学习\计算机\C#\第五章\类型转换\类型转换\obj\Debug\类型转换.csproj.CoreCompileInputs.cache
+G:\学习\计算机\C#\第五章\类型转换\类型转换\obj\Debug\类型转换.exe
+G:\学习\计算机\C#\第五章\类型转换\类型转换\obj\Debug\类型转换.pdb

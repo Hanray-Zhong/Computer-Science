@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "字符串处理", "字符串处理\字符串处理.csproj", "{04344167-C1EC-42D0-B1A3-F52B3E64EC68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04344167-C1EC-42D0-B1A3-F52B3E64EC68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04344167-C1EC-42D0-B1A3-F52B3E64EC68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04344167-C1EC-42D0-B1A3-F52B3E64EC68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04344167-C1EC-42D0-B1A3-F52B3E64EC68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B08CAF8-EA35-483B-9D20-65DB0DC70D67}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,7 @@
+G:\学习\计算机\C#\第五章\字符串处理\字符串处理\obj\Debug\字符串处理.csprojResolveAssemblyReference.cache
+G:\学习\计算机\C#\第五章\字符串处理\字符串处理\obj\Debug\字符串处理.csproj.CoreCompileInputs.cache
+G:\学习\计算机\C#\第五章\字符串处理\字符串处理\bin\Debug\字符串处理.exe.config
+G:\学习\计算机\C#\第五章\字符串处理\字符串处理\bin\Debug\字符串处理.exe
+G:\学习\计算机\C#\第五章\字符串处理\字符串处理\bin\Debug\字符串处理.pdb
+G:\学习\计算机\C#\第五章\字符串处理\字符串处理\obj\Debug\字符串处理.exe
+G:\学习\计算机\C#\第五章\字符串处理\字符串处理\obj\Debug\字符串处理.pdb

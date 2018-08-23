@@ -1,0 +1,7 @@
+G:\学习\计算机\C#\第四章\do循环\do循环\obj\Debug\do循环.csprojResolveAssemblyReference.cache
+G:\学习\计算机\C#\第四章\do循环\do循环\obj\Debug\do循环.csproj.CoreCompileInputs.cache
+G:\学习\计算机\C#\第四章\do循环\do循环\bin\Debug\do循环.exe.config
+G:\学习\计算机\C#\第四章\do循环\do循环\bin\Debug\do循环.exe
+G:\学习\计算机\C#\第四章\do循环\do循环\bin\Debug\do循环.pdb
+G:\学习\计算机\C#\第四章\do循环\do循环\obj\Debug\do循环.exe
+G:\学习\计算机\C#\第四章\do循环\do循环\obj\Debug\do循环.pdb

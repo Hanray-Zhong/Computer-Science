@@ -1,0 +1,7 @@
+G:\学习\计算机\C#\第五章\枚举与结构\枚举与结构\obj\Debug\枚举与结构.csprojResolveAssemblyReference.cache
+G:\学习\计算机\C#\第五章\枚举与结构\枚举与结构\obj\Debug\枚举与结构.csproj.CoreCompileInputs.cache
+G:\学习\计算机\C#\第五章\枚举与结构\枚举与结构\bin\Debug\枚举与结构.exe.config
+G:\学习\计算机\C#\第五章\枚举与结构\枚举与结构\bin\Debug\枚举与结构.exe
+G:\学习\计算机\C#\第五章\枚举与结构\枚举与结构\bin\Debug\枚举与结构.pdb
+G:\学习\计算机\C#\第五章\枚举与结构\枚举与结构\obj\Debug\枚举与结构.exe
+G:\学习\计算机\C#\第五章\枚举与结构\枚举与结构\obj\Debug\枚举与结构.pdb
