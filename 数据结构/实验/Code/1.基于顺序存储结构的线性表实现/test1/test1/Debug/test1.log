@@ -1,0 +1,10 @@
+﻿  test1.cpp
+e:\文档\学习\github\computer-science\数据结构\实验\code\1.基于顺序存储结构的线性表实现\test1\test1\test1.cpp(44): error C3861: “system”: 找不到标识符
+e:\文档\学习\github\computer-science\数据结构\实验\code\1.基于顺序存储结构的线性表实现\test1\test1\test1.cpp(56): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+e:\文档\学习\github\computer-science\数据结构\实验\code\1.基于顺序存储结构的线性表实现\test1\test1\test1.cpp(121): error C3861: “malloc”: 找不到标识符
+e:\文档\学习\github\computer-science\数据结构\实验\code\1.基于顺序存储结构的线性表实现\test1\test1\test1.cpp(123): error C3861: “exit”: 找不到标识符
+e:\文档\学习\github\computer-science\数据结构\实验\code\1.基于顺序存储结构的线性表实现\test1\test1\test1.cpp(130): error C3861: “free”: 找不到标识符
+e:\文档\学习\github\computer-science\数据结构\实验\code\1.基于顺序存储结构的线性表实现\test1\test1\test1.cpp(194): error C2082: 形参“i”的重定义
+e:\文档\学习\github\computer-science\数据结构\实验\code\1.基于顺序存储结构的线性表实现\test1\test1\test1.cpp(198): error C3861: “realloc”: 找不到标识符
+e:\文档\学习\github\computer-science\数据结构\实验\code\1.基于顺序存储结构的线性表实现\test1\test1\test1.cpp(200): error C3861: “exit”: 找不到标识符
