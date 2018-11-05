@@ -30,10 +30,10 @@ status ListEmpty(SqList L);     // 判定空表
 int    ListLength(SqList L);    // 求表长
 status GetElem(SqList L,int i,ElemType & e);    // 获得元素
 status LocateElem(SqList L,ElemType e);         // 查找元素
-status PriorElem(SqList L,ElemType cur,ElemType & pre_e);   // 获得前驱
-status NextElem(SqList L,ElemType cur,ElemType & next_e);   // 获得后继
+status PriorElem(SqList L,ElemType cur,ElemType * pre_e);   // 获得前驱
+status NextElem(SqList L,ElemType cur,ElemType * next_e);   // 获得后继
 status ListInsert(SqList & L,int i,ElemType e);             // 插入元素
-status ListDelete(SqList & L,int i,ElemType & e);           // 删除元素
+status ListDelete(SqList & L,int i,ElemType * e);           // 删除元素
 status ListTrabverse(SqList L); // 遍历表
 
 
@@ -51,62 +51,113 @@ int main() {
 	    printf("    	  6. GetElem         12. ListTrabverse\n");
 	    printf("    	  0. Exit\n");
 	    printf("-------------------------------------------------\n");
-	    printf("    请选择你的操作[0~12]:");
+	    printf("    Please chose : [0~12]:");
 	    scanf("%d",&op);
+        getchar();
         switch(op){
 	        case 1:
-		        printf("\n----IntiaList功能待实现！\n");
-		        if(IntiaList(L)==OK) 
-                    printf("线性表创建成功！\n");
+		        if (IntiaList(L) == OK) 
+                    printf("Success\n");
 		        else 
-                    printf("线性表创建失败！\n");
-		        getchar();getchar();
+                    printf("failed\n");
+		        getchar();
 		        break;
 	        case 2:
-		        printf("\n----DestroyList功能待实现！\n");     
-		        getchar();getchar();
+                if (DestroyList(&L) == OK)
+                    printf("Success\n");
+                else 
+                    printf("Failed\n");
+		        getchar();
 		        break;
 	        case 3:
-		        printf("\n----ClearList功能待实现！\n");     
-		        getchar();getchar();
+		        if (ClearList(L) == OK) 
+                    printf("Success\n");
+                else 
+                    printf("Failed\n");
+		        getchar();
 		        break;
 	        case 4:
-		        printf("\n----ListEmpty功能待实现！\n");     
-		        getchar();getchar();
+		        if (ListEmpty(L) == TRUE)
+                    printf("The list is empty\n");
+                else
+                    printf("The list isn't empty\n");     
+		        getchar();
 		        break;
 	        case 5:
-		        printf("\n----ListLength功能待实现！\n");     
-		        getchar();getchar();
+		        printf("The list length is : %d\n", ListLength(L));     
+		        getchar();
 		        break;
 	        case 6:
-		        printf("\n----GetElem功能待实现！\n");     
-		        getchar();getchar();
+		        int index;
+                ElemType e;
+                printf("Please input the index : ");
+                scanf("%d", &index);
+                getchar();
+                if (GetElem(L, index, e) != ERROR)
+                    printf("The element is : %d\n", e);
+                else
+                    printf("Failed\n");
+		        getchar();
 		        break;
 	        case 7:
-		        printf("\n----LocateElem功能待实现！\n");     
-		        getchar();getchar();
+                printf("Please input the element : ");
+                scanf("%d", &e);
+                getchar();
+		        if (LocateElem(L, e) == ERROR)
+                    printf("There is not the element\n");
+                else 
+                    printf("The index is : %d", LocateElem(L, e));
+		        getchar();
 		        break;
 	        case 8:
-		        printf("\n----PriorElem功能待实现！\n");     
-		        getchar();getchar();
+                ElemType cue, pre;
+                printf("Please input the element : ");
+                scanf("%d", &cue);
+                getchar();
+		        if (PriorElem(L, cue, &pre) == OK)
+                    printf("The prior element is : %d\n", pre);
+                else
+                    printf("There is not the element\n");
+		        getchar();
 		        break;
 	        case 9:
-		        printf("\n----NextElem功能待实现！\n");     
-		        getchar();getchar();
+		        ElemType next;
+                printf("Please input the element : ");
+                scanf("%d", &cue);
+                getchar();
+		        if (NextElem(L, cue, &next) == OK)
+                    printf("The next element is : %d\n", next);
+                else
+                    printf("There is not the element\n");
+		        getchar();
 		        break;
 	        case 10:
-		        printf("\n----ListInsert功能待实现！\n");     
-		        getchar();getchar();
+                printf("Please input the index : ");
+                scanf("%d", &index);
+                getchar();
+                printf("Please input the element : ");
+                scanf("%d", &e);
+                getchar();
+		        if (ListInsert(L, index, e) == OK)
+                    printf("Success\n");
+                else 
+                    printf("Failed\n");
+		        getchar();
 		        break;
 	        case 11:
-		        printf("\n----ListDelete功能待实现！\n");     
-		        getchar();getchar();
+		        printf("Please input the index : ");
+                scanf("%d", &index);
+                getchar();
+		        if (ListDelete(L, index, &e) == OK)
+                    printf("Success\n");
+                else 
+                    printf("Failed\n");
+		        getchar();
 		        break;
 	        case 12:
-		        printf("\n----ListTrabverse功能待实现！\n");     
 		        if(!ListTrabverse(L)) 
-                    printf("线性表是空表！\n");
-		        getchar();getchar();
+                    printf("The list is empty!\n");
+		        getchar();
 		        break;
 	        case 0:
                 break;
@@ -151,6 +202,9 @@ int ListLength(SqList L) {
 }
 
 status GetElem(SqList L, int i, ElemType & e) {
+    if (i < 1 || i > ListLength(L))
+        return ERROR;
+
     e = L.elem[i - 1];
     return e;
 }
@@ -191,7 +245,7 @@ status NextElem(SqList L, ElemType cue, ElemType * next) {
 
 status ListInsert(SqList & L, int i, ElemType e) {
     ElemType * newbase, *p, *q;
-    if (i < 0 || i > L.length + 1)
+    if (i < 1 || i > L.length + 1)
         return ERROR;
     if (L.length >= L.listSize) {
         newbase = (ElemType * )realloc(L.elem, (L.listSize + LISTINCREMENT) * sizeof(ElemType));
@@ -229,9 +283,10 @@ status ListDelete(SqList & L, int i, ElemType *e) {
 
 status ListTrabverse(SqList L) {
     int i;
+    if (ListEmpty(L))
+        return ERROR;
     for (i = 0; i < L.length; i++) {
         printf("%d ", L.elem[i]);
     }
-
     return OK;
 }
