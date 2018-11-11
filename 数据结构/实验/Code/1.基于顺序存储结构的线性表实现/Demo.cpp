@@ -1,4 +1,4 @@
-#include "stdio.h"
+﻿#include "stdio.h"
 #include "malloc.h"
 #include "stdlib.h"
 
@@ -14,7 +14,7 @@
 typedef int status;
 typedef int ElemType;
 
-#define LIST_INIT_SIZE 100
+#define LIST_INIT_SIZE 1
 #define LISTINCREMENT  10
 typedef struct {
     ElemType * elem;
@@ -23,22 +23,25 @@ typedef struct {
 }SqList;
 
 
-status IntiaList(SqList & L);   // 初始化表
-status DestroyList(SqList * L); // 销毁表
-status ClearList(SqList & L);    // 清空表
-status ListEmpty(SqList L);     // 判定空表
-int    ListLength(SqList L);    // 求表长
-status GetElem(SqList L,int i,ElemType & e);    // 获得元素
-status LocateElem(SqList L,ElemType e);         // 查找元素
+status IntiaList(SqList & L);                               // 初始化表
+status DestroyList(SqList * L);                             // 销毁表
+status ClearList(SqList & L);                               // 清空表
+status ListEmpty(SqList L);                                 // 判定空表
+int    ListLength(SqList L);                                // 求表长
+status GetElem(SqList L,int i,ElemType & e);                // 获得元素
+status LocateElem(SqList L,ElemType e, status (*Compare)(ElemType a, ElemType b));                   // 查找元素
 status PriorElem(SqList L,ElemType cur,ElemType * pre_e);   // 获得前驱
 status NextElem(SqList L,ElemType cur,ElemType * next_e);   // 获得后继
 status ListInsert(SqList & L,int i,ElemType e);             // 插入元素
 status ListDelete(SqList & L,int i,ElemType * e);           // 删除元素
-status ListTrabverse(SqList L); // 遍历表
+status ListTrabverse(SqList L);                             // 遍历表
+status Compare(ElemType a, ElemType b);                     // 比较
 
+extern bool isNull = TRUE;
 
 int main() {
-    SqList L;  int op=1;
+    SqList L;  
+	int op=1;
     while(op){
 	    system("cls");	printf("\n\n");
 	    printf("      Menu for Linear Table On Sequence Structure \n");
@@ -54,17 +57,19 @@ int main() {
 	    printf("    Please chose : [0~12]:");
 	    scanf("%d",&op);
         getchar();
-        switch(op){
+        switch(op) {
 	        case 1:
-		        if (IntiaList(L) == OK) 
-                    printf("Success\n");
+		        if (IntiaList(L) == OK) {
+		        	printf("Success\n");
+				}
 		        else 
                     printf("failed\n");
 		        getchar();
 		        break;
 	        case 2:
-                if (DestroyList(&L) == OK)
-                    printf("Success\n");
+                if (DestroyList(&L) == OK) {
+                	printf("Success\n");
+				}
                 else 
                     printf("Failed\n");
 		        getchar();
@@ -103,10 +108,10 @@ int main() {
                 printf("Please input the element : ");
                 scanf("%d", &e);
                 getchar();
-		        if (LocateElem(L, e) == ERROR)
+		        if (LocateElem(L, e, Compare) == ERROR)
                     printf("There is not the element\n");
                 else 
-                    printf("The index is : %d", LocateElem(L, e));
+                    printf("The index is : %d", LocateElem(L, e, Compare));
 		        getchar();
 		        break;
 	        case 8:
@@ -117,7 +122,7 @@ int main() {
 		        if (PriorElem(L, cue, &pre) == OK)
                     printf("The prior element is : %d\n", pre);
                 else
-                    printf("There is not the element\n");
+                    printf("Failed!\n");
 		        getchar();
 		        break;
 	        case 9:
@@ -128,7 +133,7 @@ int main() {
 		        if (NextElem(L, cue, &next) == OK)
                     printf("The next element is : %d\n", next);
                 else
-                    printf("There is not the element\n");
+                    printf("Failed!\n");
 		        getchar();
 		        break;
 	        case 10:
@@ -155,8 +160,7 @@ int main() {
 		        getchar();
 		        break;
 	        case 12:
-		        if(!ListTrabverse(L)) 
-                    printf("The list is empty!\n");
+		        ListTrabverse(L);
 		        getchar();
 		        break;
 	        case 0:
@@ -172,23 +176,34 @@ status IntiaList(SqList & L) {
     L.elem = (ElemType *)malloc(LIST_INIT_SIZE * sizeof(ElemType));
     if (!L.elem)
         exit(OVERFLOW);
+	isNull = FALSE;
     L.length = 0;
     L.listSize = LIST_INIT_SIZE;
     return OK;
 }
 
 status DestroyList(SqList * L) {
-    free(L);
+	L->length = 0;
+	isNull = TRUE;
+	free(L->elem);
     L = NULL;
     return OK;
 }
 
 status ClearList(SqList & L) {
+	if (isNull) {
+		printf("The list is NULL.");
+		return ERROR;	
+	}
     L.length = 0;
     return OK;
 }
 
 status ListEmpty(SqList L) {
+	if (isNull) {
+		printf("The list is NULL.");
+		return ERROR;	
+	}
     if (L.length == 0) {
         return TRUE;
     }
@@ -198,10 +213,18 @@ status ListEmpty(SqList L) {
 }
 
 int ListLength(SqList L) {
+	if (isNull) {
+		printf("The list is NULL.");
+		return ERROR;	
+	}
     return L.length;
 }
 
 status GetElem(SqList L, int i, ElemType & e) {
+	if (isNull) {
+		printf("The list is NULL.");
+		return ERROR;	
+	}
     if (i < 1 || i > ListLength(L))
         return ERROR;
 
@@ -209,23 +232,33 @@ status GetElem(SqList L, int i, ElemType & e) {
     return e;
 }
 
-int LocateElem(SqList L, ElemType e) {
+int LocateElem(SqList L, ElemType e, status(*Compare)(ElemType, ElemType)) {
+	if (isNull) {
+		printf("The list is NULL.");
+		return ERROR;	
+	}
     int index = 1;
-    while (*L.elem != e) {
-        index++;
-        L.elem ++;
-        if (index > L.length) {
-            return ERROR;
+    for (index; index <= L.length; index++) {
+        if ((*Compare)(L.elem[index - 1], e)) {
+            return index;
         }
     }
-    return index;
+    return ERROR;
 }
 
 status PriorElem(SqList L, ElemType cue, ElemType * pre) {
+	if (isNull) {
+		printf("The list is NULL.");
+		return ERROR;	
+	}
     int i;
     for (i = 0; i < L.listSize; i++) {
         if (L.elem[i] == cue) {
-            *pre = L.elem[i - 1];
+            if (i == 0) {
+        		printf("This is the head element!\n");
+        		return ERROR;
+			}
+			*pre = L.elem[i - 1];
             return OK;
         }
     }
@@ -233,19 +266,32 @@ status PriorElem(SqList L, ElemType cue, ElemType * pre) {
 }
 
 status NextElem(SqList L, ElemType cue, ElemType * next) {
+	if (isNull) {
+		printf("The list is NULL.");
+		return ERROR;	
+	}
     int i; 
     for (i = 0; i < L.listSize - 1; i++) {
         if (L.elem[i] == cue) {
+        	if (i == L.length - 1) {
+        		printf("This is the rear element!\n");
+        		return ERROR;
+			}
             *next = L.elem[i + 1];
             return OK;
         }
     }
+    printf("There is not the element!\n");
     return FALSE;
 }
 
 status ListInsert(SqList & L, int i, ElemType e) {
+	if (isNull) {
+		printf("The list is NULL.");
+		return ERROR;	
+	}
     ElemType * newbase, *p, *q;
-    if (i < 1 || i > L.length + 1)
+    if (i < 1 || i > L.length + 1 || &L == NULL)
         return ERROR;
     if (L.length >= L.listSize) {
         newbase = (ElemType * )realloc(L.elem, (L.listSize + LISTINCREMENT) * sizeof(ElemType));
@@ -267,10 +313,14 @@ status ListInsert(SqList & L, int i, ElemType e) {
 }
 
 status ListDelete(SqList & L, int i, ElemType *e) {
+	if (isNull) {
+		printf("The list is NULL.");
+		return ERROR;	
+	}
     ElemType *p, *q;
-    if (i < 1 || i > L.length || L.elem)
+    if (i < 1 || i > L.length)
         return ERROR;
-    p = &(L.elem[i + 1]);
+    p = &(L.elem[i - 1]);
     e = p;
     q = &(L.elem[L.length - 1]);
     for (p++; p <= q; p++) {
@@ -282,11 +332,26 @@ status ListDelete(SqList & L, int i, ElemType *e) {
 }
 
 status ListTrabverse(SqList L) {
+	if (isNull) {
+		printf("The list is NULL.");
+		return ERROR;	
+	}
     int i;
-    if (ListEmpty(L))
+    if (ListEmpty(L)) {
+    	printf("The list is empty!\n");
         return ERROR;
+    }
     for (i = 0; i < L.length; i++) {
         printf("%d ", L.elem[i]);
     }
     return OK;
+}
+
+status Compare(ElemType a, ElemType b) {
+    if (a == b) {
+        return TRUE;
+    }
+    else {
+        return FALSE;
+    }
 }
