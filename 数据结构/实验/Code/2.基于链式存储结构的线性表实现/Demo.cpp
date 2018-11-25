@@ -1,6 +1,7 @@
 #include "stdio.h"
 #include "malloc.h"
 #include "stdlib.h"
+#include "string.h"
 
 /* DATA DEFINE */
 #define TRUE 1
@@ -14,52 +15,32 @@
 typedef int status;
 typedef int ElemType;
 
-#define LIST_INIT_SIZE 100
+#define LIST_INIT_SIZE 10
 #define LISTINCREMENT  10
-
-// 创建单个的储存空间
-typedef struct LNode {
+// 定义节点
+typedef struct Lnode {
     ElemType data;
     struct Lnode * next;
 }LNode, *LinkList;
 
-// 头节点
-typedef struct {
-    char Node_name[20];
-    LinkList TopLnode;
-}Top;
-
-// 创建链表
-typedef struct {
-    Top * elem;
-    int length;
-    int listSize;
-}SqList;
-
-/*---------------基本方法----------------*/
-status IntiaList(SqList & L);                                       // 初始化链表
-status IntiaList(LinkList & L);                                     // 初始化链表
-status DestroyList(LinkList & L);                                   // 销毁表
-status ClearList(LinkList & L);                                     // 清空表
-status ListEmpty(LinkList L);                                       // 判定空表
-int    ListLength(LinkList L);                                      // 求表长
-status GetElem(LinkList L, int i, ElemType & e);                    // 获得元素
-status LocateElem(LinkList L, ElemType e, status (*Compare)(ElemType a, ElemType b));         // 查找元素
-status PriorElem(LinkList L, ElemType cur, ElemType * pre_e);       // 获得前驱
-status NextElem(LinkList L, ElemType cur, ElemType * next_e);       // 获得后继
-status ListInsert(LinkList * L, int i, ElemType e);                 // 插入元素
-status ListDelete(LinkList * L, int i, ElemType * e);               // 删除元素
-status ListTrabverse(SqList L);                                     // 遍历表
-status Compare(ElemType a, ElemType b);
-
-/*---------------存储链式表----------------*/
-status SaveList(SqList L);
-status ReadList(SqList * L);
-
-
+status IntiaList(LinkList * L);                             // 初始化一个链表
+status DestroyList(LinkList * L);                           // 销毁表
+status ClearList(LinkList * L);                             // 清空表
+status ListEmpty(LinkList L);                               // 判定空表
+int    ListLength(LinkList L);                              // 求表长
+status GetElem(LinkList L,int i,ElemType & e);              // 获得元素
+status LocateElem(LinkList L,ElemType e, status (*Compare)(ElemType a, ElemType b));                 // 查找元素
+status PriorElem(LinkList L,ElemType cur,ElemType * pre_e); // 获得前驱
+status NextElem(LinkList L,ElemType cur,ElemType * next_e); // 获得后继
+status ListInsert(LinkList * L,int i,ElemType e);           // 插入元素
+status ListDelete(LinkList * L,int i,ElemType * e);         // 删除元素
+status ListTrabverse(LinkList L);                           // 遍历表
+status Compare(ElemType a, ElemType b);                     // 比较
+status Visit(ElemType e);
 
 int main() {
-    SqList L;  int op=1;
+    LinkList L;  
+	int op=1;
     while(op){
 	    system("cls");	printf("\n\n");
 	    printf("      Menu for Linear Table On Sequence Structure \n");
@@ -75,37 +56,38 @@ int main() {
 	    printf("    Please chose : [0~12]:");
 	    scanf("%d",&op);
         getchar();
-        switch(op){
+        switch(op) {
 	        case 1:
-		        if (IntiaList(L) == OK) 
-                    printf("Success\n");
+		        if (IntiaList(&L) == OK) {
+		        	printf("Success\n");
+				}
 		        else 
                     printf("failed\n");
 		        getchar();
 		        break;
 	        case 2:
-                if (DestroyList(&L) == OK)
-                    printf("Success\n");
+                if (DestroyList(&L) == OK) {
+                	printf("Success\n");
+				}
                 else 
                     printf("Failed\n");
 		        getchar();
 		        break;
 	        case 3:
-		        if (ClearList(L) == OK) 
+		        if (ClearList(&L) == OK) 
                     printf("Success\n");
                 else 
                     printf("Failed\n");
 		        getchar();
 		        break;
 	        case 4:
-		        if (ListEmpty(L) == TRUE)
-                    printf("The list is empty\n");
-                else
-                    printf("The list isn't empty\n");     
+		        ListEmpty(L);
 		        getchar();
 		        break;
 	        case 5:
-		        printf("The list length is : %d\n", ListLength(L));     
+		        if (ListLength(L) != ERROR) {
+                    printf ("The length is : %d", ListLength(L));
+                }
 		        getchar();
 		        break;
 	        case 6:
@@ -124,10 +106,8 @@ int main() {
                 printf("Please input the element : ");
                 scanf("%d", &e);
                 getchar();
-		        if (LocateElem(L, e) == ERROR)
-                    printf("There is not the element\n");
-                else 
-                    printf("The index is : %d", LocateElem(L, e));
+		        if (LocateElem(L, e, Compare) != ERROR)
+                    printf("The index is : %d", LocateElem(L, e, Compare));
 		        getchar();
 		        break;
 	        case 8:
@@ -137,8 +117,6 @@ int main() {
                 getchar();
 		        if (PriorElem(L, cue, &pre) == OK)
                     printf("The prior element is : %d\n", pre);
-                else
-                    printf("There is not the element\n");
 		        getchar();
 		        break;
 	        case 9:
@@ -148,8 +126,6 @@ int main() {
                 getchar();
 		        if (NextElem(L, cue, &next) == OK)
                     printf("The next element is : %d\n", next);
-                else
-                    printf("There is not the element\n");
 		        getchar();
 		        break;
 	        case 10:
@@ -159,7 +135,7 @@ int main() {
                 printf("Please input the element : ");
                 scanf("%d", &e);
                 getchar();
-		        if (ListInsert(L, index, e) == OK)
+		        if (ListInsert(&L, index, e) == OK)
                     printf("Success\n");
                 else 
                     printf("Failed\n");
@@ -169,15 +145,14 @@ int main() {
 		        printf("Please input the index : ");
                 scanf("%d", &index);
                 getchar();
-		        if (ListDelete(L, index, &e) == OK)
+		        if (ListDelete(&L, index, &e) == OK)
                     printf("Success\n");
                 else 
                     printf("Failed\n");
 		        getchar();
 		        break;
 	        case 12:
-		        if(!ListTrabverse(L)) 
-                    printf("The list is empty!\n");
+		        ListTrabverse(L);
 		        getchar();
 		        break;
 	        case 0:
@@ -189,3 +164,222 @@ int main() {
     return 0;
 }
 
+
+status IntiaList(LinkList * L) {
+    *L = (LinkList)malloc(sizeof(LNode));
+    if (*L == NULL)
+        exit(OVERFLOW);
+    (*L)->data = 0;
+    (*L)->next = NULL;
+    return OK;
+}
+
+status DestroyList(LinkList * L) {
+    if (L == NULL) {
+        printf ("The list is NULL.");
+        return ERROR;
+    }
+	LinkList p, q;
+    p = *L;
+    while (p) {
+        q = p->next;
+        free(p);
+        p = q;
+    }
+    *L = NULL;
+    return OK;
+}
+
+status ClearList(LinkList * L) {
+    if (L == NULL) {
+        printf ("The list is NULL.");
+        return ERROR;
+    }
+    LinkList p, q;
+    p = (*L)->next;
+    while (p) {
+        q = p->next;
+        free(p);
+        p = q;
+    }
+    (*L)->next = NULL;
+    return OK;
+}
+
+status ListEmpty(LinkList L) {
+    if (L == NULL) {
+        printf ("The list is NULL.");
+        return ERROR;
+    }
+    if (L->next == NULL) {
+        printf ("The list is empty.");
+        return TRUE;
+    }
+    else {
+        printf ("The list isn't empty.");
+        return FALSE;
+    }
+}
+
+int ListLength(LinkList L) {
+    if (L == NULL) {
+        printf ("The list is NULL.");
+        return ERROR;
+    }
+    int i = 0;
+    LinkList p = L->next;
+    while (p) {
+        i++;
+        p = p->next;
+    }
+    return i;
+}
+
+status GetElem(LinkList L, int i, ElemType * e) {
+    if (L == NULL) {
+        printf ("The list is NULL.");
+        return ERROR;
+    }
+    int times = 1;              // 计数
+    LinkList p = L->next;
+    if (i < 1 || i > ListLength(L)) {
+        printf ("The index is illegal.");
+        return ERROR;
+    }
+    while (p && times < i) {
+        p = p->next;
+        times++;
+    }
+    *e = p->data;
+    return OK;
+}
+
+int LocateElem(LinkList L, ElemType e, status(*Compare)(ElemType, ElemType)) {
+    if (L == NULL) {
+        printf ("The list is NULL.");
+        return ERROR;
+    }
+    int index = 0;
+    LinkList p = L->next;
+    while (p) {
+        index++;
+        if (Compare(p->data, e)) {
+            return index;
+        }
+        p = p->next;
+    }
+    printf ("The element is not in the list.");
+    return ERROR;
+}
+
+status PriorElem(LinkList L, ElemType cue, ElemType * pre) {
+    if (L == NULL) {
+        printf ("The list is NULL.");
+        return ERROR;
+    }
+    LinkList p = L->next;
+    while (p->next != NULL && p->next->data != cue) {
+        p = p->next;
+    }
+    if (p->next == NULL) {
+        printf ("The pre element doesn't exist.");
+        return ERROR;
+    }
+    *pre = p->data;
+    return OK;
+}
+
+status NextElem(LinkList L, ElemType cue, ElemType * next) {
+    if (L == NULL) {
+        printf ("The list is NULL.");
+        return ERROR;
+    }
+    LinkList p = L->next; 
+    while (p->next != NULL && p->data != cue) {
+        p = p->next;
+    }
+    if (p->next == NULL) {
+        printf ("The next element doesn't exist.");
+        return ERROR;
+    }
+    *next = p->next->data;
+    return OK;
+}
+
+status ListInsert(LinkList * L, int i, ElemType e) {
+    if (L == NULL) {
+        printf ("The list is NULL.");
+        return ERROR;
+    }
+    int j = 1;
+    LinkList p, newLode;
+    p = *L;
+    while (p != NULL && j < 1) {
+        p = p->next;
+        j++;
+    }
+    if (p == NULL || j > i) {
+        printf ("The index is illegal.");
+        return ERROR;
+    }
+    newLode = (LinkList)malloc(sizeof(LNode));
+    if (newLode == NULL) {
+        exit(OVERFLOW);
+    }
+    newLode->data = e;
+    newLode->next = p->next;
+    p->next = newLode;
+    return OK;
+}
+
+status ListDelete(LinkList * L, int i, ElemType * e) {
+    if (L == NULL) {
+        printf ("The list is NULL.");
+        return ERROR;
+    }
+    int j = 1;
+    LinkList p, q;
+    p = *L;
+    while (p != NULL && j < 1) {
+        p = p->next;
+        j++;
+    }
+    if (p->next == NULL || j > i) {
+        printf ("The index is illegal.");
+        return ERROR;
+    }
+    q = p->next;
+    p->next = q->next;
+    *e = q->data;
+    free(q);
+    return OK;
+}
+
+status ListTrabverse(LinkList L, status(*visit)(ElemType e)) {
+    LinkList p = L->next;
+    if (p == NULL) {
+        printf ("The List is NULL.");
+        return ERROR;
+    }
+    while (p != NULL) {
+        if (!(*visit)(p->data)) {
+            printf ("Failed");
+        }
+        p = p->next;
+    }
+    return OK;
+}
+
+status Compare(ElemType a, ElemType b) {
+    if (a == b) {
+        return TRUE;
+    }
+    else {
+        return FALSE;
+    }
+}
+
+status Visit(ElemType e) {
+    printf ("%d ", e);
+    return OK;
+}

@@ -14,7 +14,7 @@
 typedef int status;
 typedef int ElemType;
 
-#define LIST_INIT_SIZE 1
+#define LIST_INIT_SIZE 10
 #define LISTINCREMENT  10
 typedef struct {
     ElemType * elem;
@@ -67,6 +67,11 @@ int main() {
 		        getchar();
 		        break;
 	        case 2:
+	        	if (isNull) {
+                	printf("The list is NULL.");
+                	getchar();
+                	break;
+				}
                 if (DestroyList(&L) == OK) {
                 	printf("Success\n");
 				}
@@ -84,17 +89,25 @@ int main() {
 	        case 4:
 		        if (ListEmpty(L) == TRUE)
                     printf("The list is empty\n");
-                else
+                else if (!isNull) 
                     printf("The list isn't empty\n");     
 		        getchar();
 		        break;
 	        case 5:
-		        printf("The list length is : %d\n", ListLength(L));     
+	        	if (!isNull)
+		        	printf("The list length is : %d\n", ListLength(L));
+		        else
+		        	ListLength(L);
 		        getchar();
 		        break;
 	        case 6:
 		        int index;
                 ElemType e;
+                if (isNull) {
+                	printf("The list is NULL.");
+                	getchar();
+                	break;
+				}
                 printf("Please input the index : ");
                 scanf("%d", &index);
                 getchar();
@@ -105,6 +118,11 @@ int main() {
 		        getchar();
 		        break;
 	        case 7:
+	        	if (isNull) {
+                	printf("The list is NULL.");
+                	getchar();
+                	break;
+				}
                 printf("Please input the element : ");
                 scanf("%d", &e);
                 getchar();
@@ -115,6 +133,11 @@ int main() {
 		        getchar();
 		        break;
 	        case 8:
+	        	if (isNull) {
+                	printf("The list is NULL.");
+                	getchar();
+                	break;
+				}
                 ElemType cue, pre;
                 printf("Please input the element : ");
                 scanf("%d", &cue);
@@ -126,6 +149,11 @@ int main() {
 		        getchar();
 		        break;
 	        case 9:
+	        	if (isNull) {
+                	printf("The list is NULL.");
+                	getchar();
+                	break;
+				}
 		        ElemType next;
                 printf("Please input the element : ");
                 scanf("%d", &cue);
@@ -137,6 +165,11 @@ int main() {
 		        getchar();
 		        break;
 	        case 10:
+	        	if (isNull) {
+                	printf("The list is NULL.");
+                	getchar();
+                	break;
+				}
                 printf("Please input the index : ");
                 scanf("%d", &index);
                 getchar();
@@ -150,6 +183,11 @@ int main() {
 		        getchar();
 		        break;
 	        case 11:
+	        	if (isNull) {
+                	printf("The list is NULL.");
+                	getchar();
+                	break;
+				}
 		        printf("Please input the index : ");
                 scanf("%d", &index);
                 getchar();
@@ -160,6 +198,11 @@ int main() {
 		        getchar();
 		        break;
 	        case 12:
+	        	if (isNull) {
+                	printf("The list is NULL.");
+                	getchar();
+                	break;
+				}
 		        ListTrabverse(L);
 		        getchar();
 		        break;
@@ -221,10 +264,6 @@ int ListLength(SqList L) {
 }
 
 status GetElem(SqList L, int i, ElemType & e) {
-	if (isNull) {
-		printf("The list is NULL.");
-		return ERROR;	
-	}
     if (i < 1 || i > ListLength(L))
         return ERROR;
 
@@ -233,10 +272,6 @@ status GetElem(SqList L, int i, ElemType & e) {
 }
 
 int LocateElem(SqList L, ElemType e, status(*Compare)(ElemType, ElemType)) {
-	if (isNull) {
-		printf("The list is NULL.");
-		return ERROR;	
-	}
     int index = 1;
     for (index; index <= L.length; index++) {
         if ((*Compare)(L.elem[index - 1], e)) {
@@ -247,10 +282,6 @@ int LocateElem(SqList L, ElemType e, status(*Compare)(ElemType, ElemType)) {
 }
 
 status PriorElem(SqList L, ElemType cue, ElemType * pre) {
-	if (isNull) {
-		printf("The list is NULL.");
-		return ERROR;	
-	}
     int i;
     for (i = 0; i < L.listSize; i++) {
         if (L.elem[i] == cue) {
@@ -266,10 +297,6 @@ status PriorElem(SqList L, ElemType cue, ElemType * pre) {
 }
 
 status NextElem(SqList L, ElemType cue, ElemType * next) {
-	if (isNull) {
-		printf("The list is NULL.");
-		return ERROR;	
-	}
     int i; 
     for (i = 0; i < L.listSize - 1; i++) {
         if (L.elem[i] == cue) {
@@ -286,10 +313,6 @@ status NextElem(SqList L, ElemType cue, ElemType * next) {
 }
 
 status ListInsert(SqList & L, int i, ElemType e) {
-	if (isNull) {
-		printf("The list is NULL.");
-		return ERROR;	
-	}
     ElemType * newbase, *p, *q;
     if (i < 1 || i > L.length + 1 || &L == NULL)
         return ERROR;
@@ -313,10 +336,6 @@ status ListInsert(SqList & L, int i, ElemType e) {
 }
 
 status ListDelete(SqList & L, int i, ElemType *e) {
-	if (isNull) {
-		printf("The list is NULL.");
-		return ERROR;	
-	}
     ElemType *p, *q;
     if (i < 1 || i > L.length)
         return ERROR;
@@ -332,10 +351,6 @@ status ListDelete(SqList & L, int i, ElemType *e) {
 }
 
 status ListTrabverse(SqList L) {
-	if (isNull) {
-		printf("The list is NULL.");
-		return ERROR;	
-	}
     int i;
     if (ListEmpty(L)) {
     	printf("The list is empty!\n");
