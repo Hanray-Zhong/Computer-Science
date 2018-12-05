@@ -2,6 +2,7 @@
 #include "malloc.h"
 #include "stdlib.h"
 #include "string.h"
+#include "conio.h"
 
 /* DATA DEFINE */
 #define TRUE 1
@@ -10,37 +11,33 @@
 #define ERROR -1
 #define OVERFLOW -2
 
+int depth, LR;
+
 /* TYPE DEFINE */
-typedef int status;
+typedef int Status;
 typedef int ElemType;
 
-#define LIST_INIT_SIZE 10
-#define LISTINCREMENT  10
 // 定义节点
-typedef struct Lnode {
-    ElemType data;
-    struct Lnode * next;
-}LNode, *LinkList;
+typedef struct BiTreeNode {
+    ElemType            data;
+    struct BiTreenode * lChild, * RChild;
+}biTreeNode, *BiTree;
 
-status IntiaList(LinkList * L);                             // 初始化一个链表
-status DestroyList(LinkList * L);                           // 销毁表
-status ClearList(LinkList * L);                             // 清空表
-status ListEmpty(LinkList L);                               // 判定空表
-int    ListLength(LinkList L);                              // 求表长
-status GetElem(LinkList L, int i, ElemType * e);              // 获得元素
-status LocateElem(LinkList L, ElemType e, status (*Compare)(ElemType a, ElemType b));                 // 查找元素
-status PriorElem(LinkList L, ElemType cur, ElemType * pre_e); // 获得前驱
-status NextElem(LinkList L, ElemType cur, ElemType * next_e); // 获得后继
-status ListInsert(LinkList * L, int i, ElemType e);           // 插入元素
-status ListDelete(LinkList * L, int i, ElemType * e);         // 删除元素
-status ListTrabverse(LinkList L, status (*Visit)(ElemType e));                           // 遍历表
-status Compare(ElemType a, ElemType b);                     // 比较
-status Visit(ElemType e);
+typedef struct QNode {
+    BiTree data;
+    struct Node * next;
+}qNode, *QueuePrt;
+
+typedef struct {
+    QueuePrt front, rear;
+}LinkQueue;
+
+Status Compare(ElemType a, ElemType b);                     // 比较
+Status Visit(ElemType e);
 
 extern bool isNULL = true;
 
 int main() {
-    LinkList L = NULL;
 	int op=1;
     while(op){
 	    system("cls");	printf("\n\n");
@@ -166,7 +163,7 @@ int main() {
 }
 
 
-status IntiaList(LinkList * L) {
+Status IntiaList(LinkList * L) {
     *L = (LinkList)malloc(sizeof(LNode));
     if (*L == NULL)
         exit(OVERFLOW);
@@ -176,7 +173,7 @@ status IntiaList(LinkList * L) {
     return OK;
 }
 
-status DestroyList(LinkList * L) {
+Status DestroyList(LinkList * L) {
     if (isNULL) {
         printf ("The list is NULL.");
         return ERROR;
@@ -193,7 +190,7 @@ status DestroyList(LinkList * L) {
     return OK;
 }
 
-status ClearList(LinkList * L) {
+Status ClearList(LinkList * L) {
     if (isNULL) {
         printf ("The list is NULL.");
         return ERROR;
@@ -209,7 +206,7 @@ status ClearList(LinkList * L) {
     return OK;
 }
 
-status ListEmpty(LinkList L) {
+Status ListEmpty(LinkList L) {
     if (isNULL) {
         printf ("The list is NULL.");
         return ERROR;
@@ -238,7 +235,7 @@ int ListLength(LinkList L) {
     return i;
 }
 
-status GetElem(LinkList L, int i, ElemType * e) {
+Status GetElem(LinkList L, int i, ElemType * e) {
     if (isNULL) {
         printf ("The list is NULL.");
         return ERROR;
@@ -257,7 +254,7 @@ status GetElem(LinkList L, int i, ElemType * e) {
     return OK;
 }
 
-int LocateElem(LinkList L, ElemType e, status(*Compare)(ElemType, ElemType)) {
+int LocateElem(LinkList L, ElemType e, Status(*Compare)(ElemType, ElemType)) {
     if (isNULL) {
         printf ("The list is NULL.");
         return ERROR;
@@ -275,7 +272,7 @@ int LocateElem(LinkList L, ElemType e, status(*Compare)(ElemType, ElemType)) {
     return ERROR;
 }
 
-status PriorElem(LinkList L, ElemType cue, ElemType * pre) {
+Status PriorElem(LinkList L, ElemType cue, ElemType * pre) {
     if (isNULL) {
         printf ("The list is NULL.");
         return ERROR;
@@ -292,7 +289,7 @@ status PriorElem(LinkList L, ElemType cue, ElemType * pre) {
     return OK;
 }
 
-status NextElem(LinkList L, ElemType cue, ElemType * next) {
+Status NextElem(LinkList L, ElemType cue, ElemType * next) {
     if (isNULL) {
         printf ("The list is NULL.");
         return ERROR;
@@ -309,7 +306,7 @@ status NextElem(LinkList L, ElemType cue, ElemType * next) {
     return OK;
 }
 
-status ListInsert(LinkList * L, int i, ElemType e) {
+Status ListInsert(LinkList * L, int i, ElemType e) {
     if (isNULL) {
         printf ("The list is NULL.");
         return ERROR;
@@ -340,7 +337,7 @@ status ListInsert(LinkList * L, int i, ElemType e) {
     return OK;
 }
 
-status ListDelete(LinkList * L, int i, ElemType * e) {
+Status ListDelete(LinkList * L, int i, ElemType * e) {
     if (isNULL) {
         printf ("The list is NULL.");
         return ERROR;
@@ -364,7 +361,7 @@ status ListDelete(LinkList * L, int i, ElemType * e) {
     return OK;
 }
 
-status ListTrabverse(LinkList L, status(*visit)(ElemType e)) {
+Status ListTrabverse(LinkList L, Status(*visit)(ElemType e)) {
     if (isNULL) {
         printf ("The List is NULL.");
         return ERROR;
@@ -383,7 +380,7 @@ status ListTrabverse(LinkList L, status(*visit)(ElemType e)) {
     return OK;
 }
 
-status Compare(ElemType a, ElemType b) {
+Status Compare(ElemType a, ElemType b) {
     if (a == b) {
         return TRUE;
     }
@@ -392,7 +389,7 @@ status Compare(ElemType a, ElemType b) {
     }
 }
 
-status Visit(ElemType e) {
+Status Visit(ElemType e) {
     printf ("%d ", e);
     return OK;
 }
