@@ -5,18 +5,18 @@
 生成一个数独格局，并用SAT相关知识解决问题
 */
 void Sudoku(void) {
-	int sud[9][9];//用于保存数独格局，0表示当前格子无数字
+	int sud[9][9];
 	int i;
 	int j;
-	Formula formula;//用于存储公式
-	int *Varies;	//用于保存变元真值关系
+	Formula formula;
+	int *Varies;
 	Varies = NULL;
-	hole*  holes;	//空格数组
-	int hole_num;	//空格数
+	hole*  holes;
+	int hole_num;
 	hole_num = 0;
 
 	system("cls");
-	printf("\n现在开始随机生成一个数独格局并转化为SAT问题解决！\n\n");
+	printf("\n随机生成一个数独格局并转化为SAT问题解决\n\n");
 	printf("------------------------------------\n\n");
 
 	//创建数独数组9×9格局
@@ -27,11 +27,12 @@ void Sudoku(void) {
 	}
 	CreateFinalSud(sud);//生成数独最终格局
 
-	hole_num = CreateSudProblem(sud);//通过全盘随机，挖洞法生成数独格局
+	//生成完成了一个数独
+	hole_num = CreateSudoku(sud);
 
 	//展示生成的数独问题格局
 	system("cls");
-	printf("\n生成的数独问题格局如下：\n\n");
+	printf("\n生成的数独：\n\n");
 	printf("        -------------------\n");
 	for (i = 0; i < 9; i++)
 	{
@@ -48,8 +49,8 @@ void Sudoku(void) {
 	printf("        -------------------\n\n");
 
 	//数独问题转化为SAT问题
-	holes = (hole*)malloc(hole_num * sizeof(hole));//开辟空格数组的空间
-	formula.num_st = 0;//初始化公式
+	holes = (hole*)malloc(hole_num * sizeof(hole));
+	formula.num_st = 0;
 	formula.num_v = 0;
 	formula.root = NULL;
 	formula.sta = -1;

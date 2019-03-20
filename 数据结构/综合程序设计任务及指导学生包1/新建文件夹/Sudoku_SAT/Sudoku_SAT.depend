@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1550975120 source:d:\codeblocks_workspace\sudoku_sat\functions.c
+	"head.h"
+
+1550902597 d:\codeblocks_workspace\sudoku_sat\head.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<time.h>
+
+1550643658 source:d:\codeblocks_workspace\sudoku_sat\sat.c
+	"head.h"
+
+1550582604 source:d:\codeblocks_workspace\sudoku_sat\solver.c
+	"head.h"
+
+1550900779 source:d:\codeblocks_workspace\sudoku_sat\sudoku.c
+	"head.h"
+
+1550650505 source:d:\codeblocks_workspace\sudoku_sat\main.c
+	"head.h"
+
+1550976327 source:d:\课程设计\想法二_done\sudoku_sat\functions.c
+	"head.h"
+
+1550902597 d:\课程设计\想法二_done\sudoku_sat\head.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<time.h>
+
+1550650505 source:d:\课程设计\想法二_done\sudoku_sat\main.c
+	"head.h"
+
+1550643658 source:d:\课程设计\想法二_done\sudoku_sat\sat.c
+	"head.h"
+
+1550582604 source:d:\课程设计\想法二_done\sudoku_sat\solver.c
+	"head.h"
+
+1550900779 source:d:\课程设计\想法二_done\sudoku_sat\sudoku.c
+	"head.h"
+

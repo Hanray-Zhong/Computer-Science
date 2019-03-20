@@ -1,26 +1,20 @@
 #include "head.h"
-/*
-*******************************
-生成数独完全格局
-算法思想：通过给定的初始3×3格局，通过行变换列变幻生成数独终局格局
-最终格局一共有16种可能
-*******************************
-*/
+
 void CreateFinalSud(int(*sud)[9]) {
-	int i;//循环变量
+	int i;
 	int j;
 	int k;
 	int a;
 	//在数独格局中给定最初的位于数独格局中央的3×3格局
 	k = 1;
-	while (k <= 9) { //由1到9依次为3×3格局赋值
+	while (k <= 9) { //由1到9依次赋值
 		for (i = 3; i < 6; i++) {
 			for (j = 3; j < 6; j++) {
 				sud[i][j] = k++;
 			}
 		}
 	}
-	//通过行变换得到初始3×3格局左右3×3位置中的数字
+	//得到初始3×3格局左右3×3位置中的数字
 	srand((unsigned)time(NULL));
 	k = rand() % 2;//通过随机数决定完全行变换产生的3×3格局的左右位置
 	if (k == 1) {
@@ -111,14 +105,13 @@ void CreateFinalSud(int(*sud)[9]) {
 
 /*
 creatSudProblem用于产生数独问题
-算法思想：全盘随机挖洞生成，可设置挖洞数
-easy  20holes,   normal  40holes,    evil  60holes
 */
-int CreateSudProblem(int(*sud)[9]) {
-	int level;//用于保存数独难度
-	int hole_num;//用于记录挖洞数目
+int CreateSudoku(int(*sud)[9]) {
+	int level;
+	int hole_num;
 	int i;
-	int hole_x;//记录挖洞位置
+	//记录挖洞位置
+	int hole_x;
 	int hole_y;
 
 	//生成挖洞数
@@ -128,16 +121,16 @@ int CreateSudProblem(int(*sud)[9]) {
 
 	scanf("%d", &level);
 	while (level > 3 || level < 1)
-		printf("输入非法【1~3】\n");
+		printf("输入非法,重新输入：\n");
 	hole_num = level * 20;
 
-	//挖洞,把被挖去的部分设为0
-	srand((unsigned)time(NULL));//设置随机数生成种子
+	//挖洞，利用随机数生成挖洞位置
+	srand((unsigned)time(NULL));
 	for (i = 1; i <= hole_num; i++) {
-		hole_x = rand() % 9;//利用随机数生成挖洞位置
+		hole_x = rand() % 9;
 		hole_y = rand() % 9;
 		while (sud[hole_x][hole_y] == 0) {
-			hole_x = rand() % 9;//利用随机数生成挖洞位置
+			hole_x = rand() % 9;
 			hole_y = rand() % 9;
 		}
 		sud[hole_x][hole_y] = 0;
@@ -189,16 +182,12 @@ void CnfToFile(Formula* formula) {
 
 /*
 将数独问题转化为SAT问题
-输入为数独格局和cnf公式地址
-输出为已生成的cnf公式和变元真值关系。其中变元真值关系通过返回值返回，公式通过公式指针返回
-算法思想：根据每个空格内有且仅有一个数字、1~9中的数字在每行、每列和每个宫内出现且仅出现一次创建子句，通过邻接表记录每个空格中可能出现的数字
+算法：根据每个空格内有且仅有一个数字、1~9中的数字在每行、每列和每个宫内出现且仅出现一次创建子句，通过邻接表记录每个空格中可能出现的数字
 优化思路：用9×10的数组保存每个数字可能出现的位置
 */
 int* TransfSud(int(*sud)[9], Formula*S, hole* holes) {
-	int* Varies;//用于表示变元真值关系的数组
-
-	int hole_num;//用于记录空格数
-	hole_num = 0;
+	int* Varies;	//用于表示变元真值关系的数组
+	int hole_num = 0;//用于记录空格数
 	digtal* p_d;	//用于生成空格中可能出现的数字,在生成子句中用于遍历
 	digtal* p_df;	//用于指向空格可能的数字的尾位置，在生成子句中用于遍历
 	Statement* p_s;	//用于创建子句
@@ -219,39 +208,39 @@ int* TransfSud(int(*sud)[9], Formula*S, hole* holes) {
 			if (sud[i][j] == 0) {
 				(holes + hole_num)->x = i;
 				(holes + hole_num)->y = j;
-				hole_num++;//保存空格数
+				hole_num++;
 			}
 		}
 	}
-	for (i = 0; i < hole_num; i++) { //找到每个空格对应的数字，生成其变元编号 
+	for (i = 0; i < hole_num; i++) { //找到每个空格对应的数字
 		holes[i].elem = NULL;
 		p_df = NULL;
 		holes[i].dig_num = 0;
 		for (j = 1; j <= 9; j++) {   //遍历检查1~9中哪些数可能出现于此空格
-			int find;//标志此数是否已出现
-			find = 0;
-			for (k = 0; k < 9 && (find == 0); k++) { //在行中查找 
+			bool found = false;//标志此数是否已出现
+			for (k = 0; k < 9 && (found == false); k++) { //在行中查找 
 				if (sud[holes[i].x][k] == j)
-					find = 1;//表示已找到
+					found = true;
 			}
-			for (k = 0; k < 9 && (find == 0); k++) { //在列中查找
+			for (k = 0; k < 9 && (found == false); k++) { //在列中查找
 				if (sud[k][holes[i].y] == j)
-					find = 1;
+					found = true;
 			}
 			x = (holes[i].x) / 3;//用于记录空格所在的宫
 			y = (holes[i].y) / 3;
-			for (int a = 3 * x; (a >= 3 * x) && (a < 3 * (x + 1)) && (find == 0); a++) { //在宫中查找
-				for (int b = 3 * y; (b >= 3 * y) && (b < 3 * (y + 1)) && (find == 0); b++) {
+			for (int a = 3 * x; (a >= 3 * x) && (a < 3 * (x + 1)) && (found == false); a++) { //在宫中查找
+				for (int b = 3 * y; (b >= 3 * y) && (b < 3 * (y + 1)) && (found == false); b++) {
 					if (sud[a][b] == j)
-						find = 1;
+						found = true;
 				}
 			}
-			if (find == 0) { //没有发现当前数字，则数字可能出现在空格中
+			//为空格内的数字生成变元编号
+			if (found == 0) {
 				p_d = (digtal*)malloc(sizeof(digtal));
-				p_d->num = j;//记录可能的数字
-				p_d->v_num = ++(S->num_v);//给定此数字一个变元编号，同时变元数加一
+				p_d->num = j;				//记录该数字
+				p_d->v_num = ++(S->num_v);	//给数字一个变元编号
 				p_d->next = NULL;
-				holes[i].dig_num++;//空格可能出现的数字数目加一
+				holes[i].dig_num++;			//空格可能出现的数字数目加一
 				if (holes[i].elem == NULL) {
 					holes[i].elem = p_d;
 					p_df = p_d;

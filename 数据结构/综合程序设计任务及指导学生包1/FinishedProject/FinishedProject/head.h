@@ -85,22 +85,26 @@ typedef struct digtal
 void SAT(long, long);
 void CNF_Reader(FILE*, Formula*);
 status Solver(Formula*, int*);
+bool Check(int* Varies_res, Formula* formula);
+int FindSolution(Literal literal, int* Varies);
 
-status JudgeClause(Formula*);
+status HaveUnitClause(Formula*);
 void RemoveClause(Literal, Formula*);
 void ClearClause(Literal, Formula*);
-status ExistEmptyClause(Formula*);
+status HaveEmptyClause(Formula*);
 Formula* AddClause(Literal, Formula*);
 void DestoryFormula(Formula*);
-Literal Choose_v(Formula*);
-Formula* Copy_S(Formula*);
+Literal Choose_L(Formula*);
+Formula* Copy_F(Formula*);
 int* Copy_V(int*, int);
 
 void Sudoku(void);
 void CreateFinalSud(int(*)[9]);
-int CreateSudProblem(int(*)[9]);
+int CreateSudoku(int(*)[9]);
 int* TransfSud(int(*)[9], Formula*, hole*);
 void ShowSudResult(int *, hole*, int(*)[9]);
 void CnfToFile(Formula*);
+
+
 
 #endif // HEAD_H_INCLUDED

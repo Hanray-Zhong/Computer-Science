@@ -2,8 +2,8 @@
 
 /*------------solver中需要的函数--------------*/
 /*拷贝当前的公式*/
-Formula* Copy_S(Formula* formula) {
-	Formula* S1;
+Formula* Copy_F(Formula* formula) {
+	Formula* S1;                                                                                                                                         
 	S1 = (Formula*)malloc(sizeof(Formula));
 	//复制当前公式中的所有信息
 	S1->sta = formula->sta;
@@ -57,7 +57,7 @@ int* Copy_V(int* V, int num_v) {
 }
 
 /*判断当前公式是否含有单子句*/
-status JudgeClause(Formula* formula) {
+status HaveUnitClause(Formula* formula) {
 	int token = 0;//用于标识公式是否含有单子句，如有则标志为1，如没有则标志为0
 	Statement* p_s;
 	p_s = formula->root;
@@ -187,8 +187,8 @@ void ClearClause(Literal lit, Formula* formula) {
 }
 
 /*判断当前公式是否含有空子句，有则返回TRUE*/
-status ExistEmptyClause(Formula* formula) {
-	int token;//用于标记是否存在空子句,1为存在
+status HaveEmptyClause(Formula* formula) {
+	int token;
 	token = 0;
 	Statement* p;
 	p = formula->root;
@@ -205,15 +205,15 @@ status ExistEmptyClause(Formula* formula) {
 }
 
 /*
-在公式中选择一个特定的文字并返回
+在公式中选择一个特定的正文字并返回
 遍历公式选出长度最短的子句，在子句中选择出现次数最多的变元，返回其正文字
 */
-Literal Choose_v(Formula* formula) {
-	Literal lit;//用于返回选择变元的正文字
+Literal Choose_L(Formula* formula) {
+	Literal lit;		//用于返回选择变元的正文字
 	Statement* shortest;//用于指向最短的子句
-	Literal* p_l;//用于遍历最短子句
-	Statement* p;//用于遍历公式
-	int v[2];//用于保存出现次数最多的变元及出现次数
+	Literal* p_l;		//用于遍历最短子句
+	Statement* p;		//用于遍历公式
+	int v[2];			//用于保存出现次数最多的变元及出现次数
 	int i;
 	//遍历公式找出最短的子句
 	p = formula->root;
@@ -266,7 +266,7 @@ Formula* AddClause(Literal lit, Formula* formula) {
 	Formula* S1;			//用于返回生成的公式
 	Statement* p_s;			//用于生成一个单子句
 	Statement* p;			//用于遍历公式
-	S1 = Copy_S(formula);	//拷贝公式
+	S1 = Copy_F(formula);	//拷贝公式
 	//根据文字生成一个单子句
 	p_s = (Statement*)malloc(sizeof(Statement));
 	p_s->elem = (Literal*)malloc(sizeof(Literal));
