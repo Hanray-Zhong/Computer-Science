@@ -42,6 +42,15 @@ void SAT(long time_start, long time_end) {
 	time_end = clock();//记录程序结束时间
 	/******************************************/
 
+	if (SAT == 1) {
+		if (Check(Varies, &formula) == true) {
+			printf("经验证，结果正确\n");
+		}
+		else {
+			printf("经验证，结果错误\n");
+		}
+	}
+
 	/*输出验证结果*/
 	//将文件名改为以.res结尾
 	int str_length;
@@ -84,17 +93,7 @@ void SAT(long time_start, long time_end) {
 	printf("%c %ldms\n", c, k);
 	fprintf(fp, "%c\t", c);
 	fprintf(fp, "%ld\n", k);
-	fclose(fp);
-
-	if (SAT == 1) {
-		if (Check(Varies, &formula) == true) {
-			printf("经验证，结果正确\n");
-		}
-		else {
-			printf("经验证，结果错误\n");
-		}
-	}
-	
+	fclose(fp);	
 }
 
 bool Check(int* Varies_res, Formula* formula) {
