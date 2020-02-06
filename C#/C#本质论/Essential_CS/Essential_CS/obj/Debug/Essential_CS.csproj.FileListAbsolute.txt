@@ -1,0 +1,6 @@
+D:\Files\Github\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\bin\Debug\Essential_CS.exe.config
+D:\Files\Github\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\bin\Debug\Essential_CS.exe
+D:\Files\Github\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\bin\Debug\Essential_CS.pdb
+D:\Files\Github\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\obj\Debug\Essential_CS.csprojAssemblyReference.cache
+D:\Files\Github\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\obj\Debug\Essential_CS.exe
+D:\Files\Github\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\obj\Debug\Essential_CS.pdb
