@@ -4,3 +4,13 @@ D:\Files\Github\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\bin\De
 D:\Files\Github\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\obj\Debug\Essential_CS.csprojAssemblyReference.cache
 D:\Files\Github\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\obj\Debug\Essential_CS.exe
 D:\Files\Github\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\obj\Debug\Essential_CS.pdb
+D:\文档\学习\GitHub\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\bin\Debug\Essential_CS.exe.config
+D:\文档\学习\GitHub\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\bin\Debug\Essential_CS.exe
+D:\文档\学习\GitHub\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\bin\Debug\Essential_CS.pdb
+D:\文档\学习\GitHub\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\obj\Debug\Essential_CS.csprojAssemblyReference.cache
+D:\文档\学习\GitHub\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\obj\Debug\Essential_CS.csproj.CoreCompileInputs.cache
+D:\文档\学习\GitHub\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\obj\Debug\Essential_CS.exe
+D:\文档\学习\GitHub\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\obj\Debug\Essential_CS.pdb
+D:\文档\学习\GitHub\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\bin\Debug\System.ValueTuple.dll
+D:\文档\学习\GitHub\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\bin\Debug\System.ValueTuple.xml
+D:\文档\学习\GitHub\Computer-Science\C#\C#本质论\Essential_CS\Essential_CS\obj\Debug\Essential_CS.csproj.CopyComplete
