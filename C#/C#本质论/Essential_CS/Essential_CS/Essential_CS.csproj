@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Chapter14\Thermostat.cs" />
     <Compile Include="Chapter15\Patent.cs" />
+    <Compile Include="Chapter16\SimpleQueryExpression.cs" />
+    <Compile Include="Chapter17\BinaryTree.cs" />
+    <Compile Include="Chapter17\Contact.cs" />
+    <Compile Include="Chapter17\CSharpBuiltInTypes.cs" />
+    <Compile Include="Chapter17\MyIndexer.cs" />
+    <Compile Include="Chapter17\NameComparison.cs" />
     <Compile Include="Chapter6\Test.cs" />
     <Compile Include="Chapter7\Preson.cs" />
     <Compile Include="Program.cs" />

@@ -9,11 +9,13 @@ using System.IO;
 using Essential_CS.Chapter7;
 using Essential_CS.Chapter14;
 using Essential_CS.Chapter15;
+using Essential_CS.Chapter17;
 
 
 namespace Essential_CS
 {
     // chapter 14
+    #region
     /*
     class Program {
         static void Main(string[] args) {
@@ -34,8 +36,11 @@ namespace Essential_CS
         }
     }
     */
+    #endregion
 
     // chapter 15
+    #region
+    /*
     class Program {
         static void Main(string[] args) {
             IEnumerable<Patent> patents = PatentData.Patents;
@@ -46,15 +51,15 @@ namespace Essential_CS
             // 输出虽然相同，但是针对每个数据项都会发生一次转换
             IEnumerable<string> items_1 = patentsOf1800.Select(patent => patent.ToString());
             // 如下例，将 string 集合投射为元组集合
-            /*
-            IEnumerable<string> fileList = Directory.EnumerateFiles("RootPath", "SearchPath");
-            IEnumerable<(string FileName, long Size)> items_2 = fileList.Select(
-                file => {
-                    FileInfo fileinfo = new FileInfo(file);
-                    return (FileName: fileinfo.Name, Size: fileinfo.Length);
-                }
-            );
-            */
+            
+            // IEnumerable<string> fileList = Directory.EnumerateFiles("RootPath", "SearchPath");
+            // IEnumerable<(string FileName, long Size)> items_2 = fileList.Select(
+            //     file => {
+            //         FileInfo fileinfo = new FileInfo(file);
+            //         return (FileName: fileinfo.Name, Size: fileinfo.Length);
+            //     }
+            // );
+            
 
             Print<Patent>(patents);
 
@@ -111,4 +116,87 @@ namespace Essential_CS
             }
         }
     }
+    */
+    #endregion
+
+    // chapter 16 查询表达式
+    #region
+    /*
+    class Program
+    {
+        static void Main(string[] args) {
+
+        }
+    }
+    */
+    #endregion
+
+    // chapter 17
+    #region
+    class Program
+    {
+        static void Main(string[] args) {
+            #region BinarySearch() 的结果进行按位取反
+            /*
+            // 对 BinarySearch() 的结果进行按位取反
+            List<string> list = new List<string>();
+            int search;
+
+            list.Add("Public");
+            list.Add("Protected");
+            list.Add("Private");
+
+            list.Sort();
+
+            search = list.BinarySearch("Protected internal");
+            if (search < 0) {
+                // 按位取反，找到大于被查找元素的下一个元素，可以方便插入新值
+                list.Insert(~search, "Protected internal");
+            }
+            foreach (string accessModifier in list) {
+                WriteLine(accessModifier);
+            }
+            ReadKey();
+            */
+            #endregion
+
+            #region Dictionary<TKey, TValue>
+            /*
+            var colorMap = new Dictionary<string, ConsoleColor> {
+                ["Error"] = ConsoleColor.Red,
+                ["Warning"] = ConsoleColor.Yellow,
+                ["Information"] = ConsoleColor.Green,
+            };
+            // Add  *删除旧值ConsoleColor.red，将Cyan与键关联
+            colorMap.Add("Error", ConsoleColor.Cyan);
+            // 索引器
+            colorMap["Verbose"] = ConsoleColor.White;
+            // foreach遍历  *KeyValuePair
+            foreach (KeyValuePair<string, ConsoleColor> item in colorMap) {
+                WriteLine(item.Key);
+            }
+            */
+            #endregion
+
+            #region Stack<T>, Queue<T>, LinkedList<T>
+
+            #endregion
+
+            #region indexer
+            /*
+            MyIndexer.Pair<int> pair = new MyIndexer.Pair<int>(1, 2);
+            // 索引器使用
+            WriteLine(pair[MyIndexer.PairItem.First]);
+            */
+            #endregion
+
+            #region 迭代器
+            var keywords = new CSharpBuiltInTypes();
+            foreach (string keyword in keywords) {
+                WriteLine(keyword);
+            }
+            #endregion
+        }
+    }
+    #endregion
 }
