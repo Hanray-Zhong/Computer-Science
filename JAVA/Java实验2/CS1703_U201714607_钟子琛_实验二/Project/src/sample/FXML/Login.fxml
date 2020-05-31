@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="280.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FXML.Controller_Login">
+   <children>
+      <Button layoutX="163.0" layoutY="189.0" mnemonicParsing="false" onAction="#Login" text="登录" />
+      <Button layoutX="239.0" layoutY="189.0" mnemonicParsing="false" text="退出" />
+      <TextField fx:id="textField_account" layoutX="163.0" layoutY="106.0" prefHeight="23.0" prefWidth="232.0" />
+      <Label layoutX="47.0" layoutY="100.0" prefHeight="36.0" prefWidth="58.0" text="账号：" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="47.0" layoutY="137.0" prefHeight="36.0" prefWidth="58.0" text="密码：" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <MenuButton fx:id="menuButton_userType" layoutX="163.0" layoutY="68.0" mnemonicParsing="false" text="病人">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#ChangeUser2Patient" text="病人" />
+          <MenuItem mnemonicParsing="false" onAction="#ChangeUser2Doctor" text="医生" />
+        </items>
+      </MenuButton>
+      <Label layoutX="47.0" layoutY="62.0" prefHeight="36.0" prefWidth="84.0" text="用户类型：" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Separator orientation="VERTICAL" prefHeight="200.0" />
+      <PasswordField fx:id="passwordField_password" layoutX="163.0" layoutY="144.0" prefHeight="23.0" prefWidth="232.0" />
+   </children>
+</AnchorPane>

@@ -1,8 +1,14 @@
 *.exe
 *.exe.config
-*,jpg
 *.JPG
+*.jpg
 *.PNG
+*.png
+*.pdf
+*.doc
+*.docx
+*.zip
+*.mp4
 
 JAVA/workspace/.metadata
 JAVA/workspace/.recommenders
