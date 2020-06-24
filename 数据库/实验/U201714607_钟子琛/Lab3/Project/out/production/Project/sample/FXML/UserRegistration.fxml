@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.15829145728643215" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FXML.Controller_UserRegistration">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <Label layoutX="237.0" layoutY="16.0" prefHeight="28.0" prefWidth="124.0" text="用 户 界 面" textAlignment="CENTER" textFill="#5c0a41">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="666.0" prefWidth="598.0">
+         <children>
+            <Label layoutX="22.0" layoutY="34.0" prefHeight="41.0" prefWidth="61.0" text="租车状态" />
+            <ComboBox fx:id="comboBox_carType" layoutX="83.0" layoutY="93.0" onAction="#UpdateCarIDCombobox" prefHeight="23.0" prefWidth="136.0" />
+            <Label layoutX="22.0" layoutY="84.0" prefHeight="41.0" prefWidth="61.0" text="租车类型" />
+            <Label layoutX="351.0" layoutY="230.0" prefHeight="41.0" prefWidth="61.0" text="交款金额" />
+            <Label layoutX="22.0" layoutY="230.0" prefHeight="41.0" prefWidth="61.0" text="卡里余额" />
+            <Label layoutX="22.0" layoutY="135.0" prefHeight="41.0" prefWidth="61.0" text="应缴押金" />
+            <TextField fx:id="textField_userPay" layoutX="412.0" layoutY="239.0" prefHeight="23.0" prefWidth="136.0" text="0" />
+            <TextField fx:id="textField_userAmount" editable="false" layoutX="83.0" layoutY="239.0" prefHeight="23.0" prefWidth="136.0" />
+            <TextField fx:id="textField_deposit" editable="false" layoutX="83.0" layoutY="144.0" prefHeight="23.0" prefWidth="136.0" />
+            <Label fx:id="label_name" layoutX="22.0" prefHeight="28.0" prefWidth="196.0" text="姓名" />
+            <Label fx:id="label_VIP" layoutX="351.0" prefHeight="28.0" prefWidth="196.0" text="会员状态" />
+            <Label fx:id="label_rentStatus" layoutX="83.0" layoutY="41.0" prefHeight="28.0" prefWidth="136.0" text="租车状态" />
+            <Label layoutX="351.0" layoutY="84.0" prefHeight="41.0" prefWidth="61.0" text="租车编码" />
+            <ComboBox fx:id="comboBox_carID" layoutX="412.0" layoutY="93.0" onAction="#UpdateAmountandDeposit" prefHeight="23.0" prefWidth="136.0" />
+            <Button layoutX="272.0" layoutY="278.0" mnemonicParsing="false" onAction="#Caculate" text="提交" />
+            <Label layoutX="351.0" layoutY="135.0" prefHeight="41.0" prefWidth="61.0" text="应缴租金" />
+            <TextField fx:id="textField_rentalAmount" editable="false" layoutX="412.0" layoutY="144.0" prefHeight="23.0" prefWidth="136.0" />
+            <Label layoutX="22.0" layoutY="182.0" prefHeight="41.0" prefWidth="61.0" text="应缴金额" />
+            <TextField fx:id="textField_totalAmount" editable="false" layoutX="83.0" layoutY="191.0" prefHeight="23.0" prefWidth="136.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
