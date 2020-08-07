@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/Learning_Java/src/NO_13_抽象类和接口/TestGeometricObject.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="NO_13_抽象类和接口.TestGeometricObject"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Learning_Java"/>
+</launchConfiguration>

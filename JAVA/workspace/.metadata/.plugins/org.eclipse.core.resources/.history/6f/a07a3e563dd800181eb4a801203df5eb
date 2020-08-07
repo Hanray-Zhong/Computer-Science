@@ -1,0 +1,10 @@
+package NO_13_抽象类和接口;
+
+public class TestGeometricObject {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

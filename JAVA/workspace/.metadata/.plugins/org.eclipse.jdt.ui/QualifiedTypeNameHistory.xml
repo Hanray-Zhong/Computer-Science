@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="NoteBook.noteBook"/>
+<fullyQualifiedTypeName name="NoteBook.CD"/>
+<fullyQualifiedTypeName name="NoteBook.Database"/>
+<fullyQualifiedTypeName name="Game.Main"/>
+<fullyQualifiedTypeName name="Game.Rooms"/>
+<fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="输入输出.标准输入输出"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+<fullyQualifiedTypeName name="java.io.OutputStreamWriter"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="算法.Test"/>
+<fullyQualifiedTypeName name="String"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.text.DecimalFormat"/>
+<fullyQualifiedTypeName name="数字处理类.随机数random"/>
+<fullyQualifiedTypeName name="数字处理类.大数字运算"/>
+<fullyQualifiedTypeName name="java.math.BigInteger"/>
+<fullyQualifiedTypeName name="Demo.Student_Class.Blood_Type"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+</qualifiedTypeNameHistroy>
